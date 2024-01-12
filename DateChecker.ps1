@@ -8,7 +8,7 @@ if ($xsdFile.Name -eq $null) {
 $csFile = Get-Item "ImportExport\SystemLayout.cs"
 
 if ($xsdFile.LastWriteTime -gt $csFile.LastWriteTime) {
-    throw "'$($csFile.Name)' file is out of date with the latest '$($xsdFile.Name)' schema file! `nIn Powershell, cd into the ImportExport directory and run this command: `n'xsd /c /n:System_Layout_Configurator.ImportExport.SystemLayout //fssav01/controlsystems/PLC-Tools/TCS-Config-Data/SystemLayout.xsd' `nMore information can be found at /ImportExport/SystemLayoutImporterExporter.cs"
+    throw "'$($csFile.Name)' file is out of date with the latest '$($xsdFile.Name)' schema file! `n"
 }
 else {
     Write-Host "'$($csFile.Name)' file is up to date with the latest '$($xsdFile.Name)' schema file."
